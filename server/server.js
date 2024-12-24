@@ -7,6 +7,7 @@ import userRouter from './routes/userRoutes.js';
 // App Config
 const PORT = process.env.PORT || 8080;
 const app = express();
+await connectDB();
 
 // API Routes
 app.get('/', (req, res) => {
@@ -19,6 +20,6 @@ app.use(cors());
 app.use(express.json());
 
 app.listen(PORT, () => {  
-    connectDB();  
+    // connectDB();  
     console.log(`Server running on port ${PORT}`);
 })
